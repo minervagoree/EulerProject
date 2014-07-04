@@ -40,22 +40,26 @@
 			<p>By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 			</p>	
 			<script language="JavaScript">
-				var total = 10;
-				var count1 = 2;
-				var count2 = 0;
-				var count3 = 0;
+				var total = 1000;
+				var first = 0;
+				var second = 1;
+				var next
+				var add =0;
 
-				for (var i = 1; i < total; i=count2) {
-					count1 = count1 +i;
-					count2 = count1;
-					count3 = count1 + count2;
+				for (var i = 1; i < total; i++) {
 
-					//if (counterFib1%2 === 0) {
-						//counterFib2= counterFib2 + counterFib1;
-					//};
-					document.write(+i+ " "+ count3 + "      ");
+					next = first + second;
+					first = second;
+					second = next;
+
+					if( next <4000000 && next%2 === 0) {
+						add = add + next;
+						  
+					}
+					
 
 				};
+				document.write("The sum of the even-valued terms up to 4 million is " + add);
 
 				
 			</script>
